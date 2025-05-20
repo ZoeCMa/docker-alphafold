@@ -1,0 +1,6 @@
+2025-05-20
+- OpenMM HIP plugin may fail to allocate memory without specific `docker run`
+  security option (cf. https://github.com/openmm/openmm/issues/4897) (prevents
+  GPU-based relaxation)
+- OpenMM version update
+- Consider rebuilding/updating kalign with AVX support
