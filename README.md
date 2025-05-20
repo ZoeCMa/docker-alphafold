@@ -13,7 +13,7 @@ The images contain the following dependencies --
 - HH-Suite v3.3.0
 - OpenMM v8.0.0
 - pdbfixer v1.9.0
-- tensorflow v2.17
+- tensorflow v2.18
 - jax v0.4.35
 
 The Python version is 3.10 for both images.
