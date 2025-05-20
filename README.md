@@ -21,4 +21,7 @@ The Python version is 3.10 for both images.
 ROCm notes
 ----------
 
-The ROCm-enabled image is based on version 6.3.3. Binaries are compiled for the GPU architecture gfx1100. The environment variable `HSA_OVERRIDE_GFX_VERSION=11.0.0` may be defined to force the architecture in use at runtime.
+The ROCm-enabled image is based on version 6.4 Binaries are compiled for the
+GPU architecture gfx1100. The environment variable
+`HSA_OVERRIDE_GFX_VERSION=11.0.0` may be defined to force the architecture in
+use at runtime.
