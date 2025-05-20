@@ -2,7 +2,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FROM ubuntu:jammy-20250126 
+FROM ubuntu:jammy-20250404
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 

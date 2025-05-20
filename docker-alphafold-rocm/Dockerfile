@@ -2,13 +2,13 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-FROM rocm/tensorflow:rocm6.3.3-py3.10-tf2.17-dev 
+FROM rocm/tensorflow:rocm6.4-py3.10-tf2.18-dev
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 ARG AMDGPU_TARGETS=gfx1100
 
-ARG ROCM_RELEASE=6.3.3
+ARG ROCM_RELEASE=6.4.0
 ENV ROCM_PATH="/opt/rocm-$ROCM_RELEASE"
 ENV LLVM_PATH="$ROCM_PATH/llvm"
 
@@ -78,7 +78,7 @@ RUN mkdir -p /tmp/builds/build-openmm-hip \
   && make -j 8 \
   && make install
 
-ENV PATH="$OPENMM_PATH/bin:$HHSUITE_PATH/bin:$PATH"
+ENV PATH="$OPENMM_PATH/bin:$HHSUITE_PATH/bin:$LLVM_PATH/bin:$PATH"
 
 # Install pdbfixer.
 ARG PDBFIXER_GIT_REFERENCE=6bf10e138f6475f6f1850dae78d7bf1b420a1612
