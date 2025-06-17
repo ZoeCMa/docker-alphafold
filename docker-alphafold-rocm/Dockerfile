@@ -28,7 +28,7 @@ ARG ROCM_RELEASE
 ARG ROCM_PATH
 ARG LLVM_PATH
 
-ARG ROCM_JAX_BRANCH=rocm-jaxlib-v0.5.0
+ARG ROCM_JAX_BRANCH=rocm-jaxlib-v0.6.0
 RUN cd /root \
     && git clone https://github.com/ROCm/jax -b "$ROCM_JAX_BRANCH" \
     && cd jax \

@@ -14,7 +14,7 @@ The images contain the following dependencies --
 - OpenMM v8.0.0
 - pdbfixer v1.9.0
 - tensorflow v2.18
-- jax v0.5.0
+- jax v0.6.0
 
 The Python version is 3.12 for both images.
 
