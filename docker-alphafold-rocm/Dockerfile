@@ -14,8 +14,7 @@ FROM rocm/tensorflow:rocm${ROCM_RELEASE}-py${PYTHON_VERSION}-tf2.18-dev AS build
 
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update --quiet && apt-get upgrade --yes --quiet \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update --quiet && apt-get upgrade --yes --quiet \
     && apt-get install --no-install-recommends --yes --quiet \
         build-essential \
         git \
@@ -46,8 +45,7 @@ ARG ROCM_RELEASE
 ARG ROCM_PATH
 ARG LLVM_PATH
 
-ENV DEBIAN_FRONTEND=noninteractive
-RUN apt-get update --quiet && apt-get upgrade --yes --quiet \
+RUN DEBIAN_FRONTEND=noninteractive apt-get update --quiet && apt-get upgrade --yes --quiet \
     && apt-get install --no-install-recommends --yes --quiet \
         cmake \
 	doxygen \
@@ -151,7 +149,7 @@ RUN DEBIAN_FRONTEND=noninteractive apt-get update --quiet \
     && apt-get autoremove --yes \
     && apt-get clean \
     && ln -s "/usr/local/bin/python${PYTHON_VERSION}" /usr/bin/python3
-COPY --from=build_alphafold /lib/x86_64-linux-gnu /lib
+COPY --from=build_alphafold /lib/x86_64-linux-gnu /lib/x86_64-linux-gnu
 COPY --from=build_alphafold /usr/local /usr/local
 COPY --from=build_alphafold /opt /opt
 COPY --from=build_alphafold /etc/ld.so.cache /etc/
